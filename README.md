@@ -1,7 +1,7 @@
 # EMG-Controlled Prosthetic Hand with Haptic Feedback
 3D-printed prosthetic hand controlled by muscle signals, with force feedback so the user can feel what they're gripping. Built for people with below-elbow limb differences.
 
-**Status: Phase 1 in progress — haptic feedback prototype running, MyoWare EMG sensor on its way.**
+**Status: Phase 1 in progress. Haptic feedback prototype running, MyoWare EMG sensor on its way.**
 
 ---
 
@@ -16,7 +16,7 @@
 ---
 
 ## The Idea
-Cheap open-source prosthetic hands already exist. The problem is they give you zero sensory feedback, meaning you have to watch your hand constantly because you can't feel whether you're gripping too hard or too soft. Commercial hands that solve this cost $10,000 to $70,000.
+Cheap open-source prosthetic hands already exist. The problem is they give you zero sensory feedback, so you have to watch your hand constantly because you can't feel whether you're gripping too hard or too soft. Commercial hands that solve this cost $10,000 to $70,000.
 
 This project adds haptic feedback to a low-cost design using force-sensitive resistors in the fingertips and a small vibration motor on the forearm sleeve. When the hand grips something, the user feels a buzz proportional to grip force. The whole addition costs under $10 in extra parts.
 
