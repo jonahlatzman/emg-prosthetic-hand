@@ -7,7 +7,9 @@
 
 ## Demo
 
-[Week 1 - FSR, servo, LED, and haptic motor all running together](https://youtu.be/Y5S91mNR1Is)
+> **Week 1: FSR, servo, LED, and haptic motor all running together**
+
+[![Watch the demo](https://img.shields.io/badge/Watch%20Demo-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/Y5S91mNR1Is)
 
 ![Week 1 circuit](media/week1_circuit.jpg)
 
@@ -40,4 +42,4 @@ Started February 22, 2026. Updating as the build progresses.
 ---
 
 ## Background
-I'm a high school junior interested in mechanical engineering. I started this project because the haptic feedback gap in low-cost prosthetics seemed like a real problem worth trying to solve, and something actually achievable without a lab. Documenting everything here as it happens.
+I'm a high school junior interested in aerospace/mechanical engineering. I started this project because the haptic feedback gap in low-cost prosthetics seemed like a real problem worth trying to solve, and something actually achievable without a lab. Documenting everything here as it happens.
