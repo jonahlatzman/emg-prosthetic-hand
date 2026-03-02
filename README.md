@@ -11,7 +11,7 @@
 
 [![Watch the demo](https://img.shields.io/badge/Watch%20Demo-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/Y5S91mNR1Is)
 
-![Week 1 circuit](media/week1_circuit.jpg)
+[![Week 1 circuit](media/week1_circuit.jpg)](https://youtu.be/Y5S91mNR1Is)
 
 ---
 
