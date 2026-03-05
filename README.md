@@ -1,7 +1,7 @@
 # EMG-Controlled Prosthetic Hand with Haptic Feedback
 3D-printed prosthetic hand controlled by muscle signals, with force feedback so the user can feel what they're gripping. Built for people with below-elbow limb differences.
 
-**Status: Phase 1 in progress. Haptic feedback prototype running, MyoWare EMG sensor on its way.**
+**Status: Phase 1 in progress. EMG sensor working, servo control confirmed, Python visualizer running.**
 
 ---
 
@@ -9,9 +9,11 @@
 
 > **Week 1: FSR, servo, LED, and haptic motor all running together**
 
-[![Watch the demo](https://img.shields.io/badge/Watch%20Demo-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/Y5S91mNR1Is)
+[![Watch the demo](https://img.shields.io/badge/Watch%20Demo%201-YouTube-red?style=for-the-badge&logo=youtube)](https://youtu.be/Y5S91mNR1Is)
 
-[![Week 1 circuit](media/week1_circuit.jpg)](https://youtu.be/Y5S91mNR1Is)
+> **Week 2: MyoWare EMG sensor controlling servo in real time**
+
+[![Watch the demo](https://img.shields.io/badge/Watch%20Demo%202-YouTube-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/watch?v=teOziozcplA)
 
 ---
 
