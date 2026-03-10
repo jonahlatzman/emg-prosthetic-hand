@@ -93,3 +93,92 @@ This is a daily record of my work on the EMG-controlled prosthetic hand project.
 **Next Steps:**
 - Sparkfun parts expected around March 3
 - Write the combined FSR and servo control code with EMG threshold logic ready to go for when the sensor arrives
+
+---
+
+## Week 2: Mar 2 - Mar 8
+
+---
+
+### Mar 2, 2026
+- Got the MyoWare 2.0 EMG sensor working for the first time. Signal responds clearly when flexing
+- Troubleshot a flatline reading that turned out to be a loose ground solder joint on the MyoWare board. Resoldered it and the signal came in clean
+- Electrode placement confirmed working: two pads on the forearm muscle belly with the reference cable on the elbow bone
+- Phase 1 EMG work officially started
+- Ordered Sparkfun CAB-12970 sensor cable, which has a 3.5mm plug on one end and three snap connectors on the other. This will work with the Cable Shield to keep the board off the skin and make electrode placement much cleaner
+
+**Next Steps:**
+- Headers and sensor cable arrive around March 4
+- Once they arrive, resolder MyoWare with header pins and set up the Cable Shield properly
+- Find threshold value that cleanly separates flex from rest
+- Start combining EMG signal with the servo and haptic motor code
+
+---
+
+### Mar 3, 2026
+- Researched 3D printed hand designs to get a better sense of what base model to work from
+- Downloaded the Flexy-Hand 2 by Gyrobot from Thingiverse as an alternative to the e-NABLE Phoenix Hand. Key features that stood out were the discrete internal tendon channels already built in and adjustable tensioners
+- Still deciding whether to modify the Phoenix Hand or Flexy-Hand 2 as the base for Phase 3
+
+**Next Steps:**
+- Header pins arrive tomorrow
+- Solder the header pins onto EMG sensor
+- Compare Phoenix Hand and Flexy-Hand 2 designs in Fusion 360
+
+---
+
+### Mar 4, 2026
+- 40 pin header strip arrived
+- Soldered header pins onto the MyoWare board
+- Hooked up the MyoWare with all three electrodes. Initially got a stuck reading around 740 that turned out to be because only the reference electrode was connected with no signal electrodes. Added all three and signal came in properly
+- EMG signal range: resting around 80, hard flex around 300
+- Integrated EMG into the full circuit alongside servo, FSR, LED, and vibration motor. Flex closes the servo, relax opens it. FSR still drives haptic motor intensity independently
+- Added a 10 sample moving average filter to smooth out noise. Threshold set at 60, which gives a clean gap above the resting signal
+- Got Python visualizer running and plotting EMG and FSR signals live side by side
+
+**Next Steps:**
+- Run flex and rest trials to nail down a proper threshold value
+- Take a screen recording of the visualizer for documentation
+- Compare Phoenix Hand and Flexy-Hand 2 in Fusion 360 to decide which base model to use
+
+---
+
+### Mar 5, 2026
+- Signal was still inconsistent session to session due to floating pin noise on the breadboard
+- Increased moving average filter from 10 to 30 samples, brought resting signal down to around 30 and hard flex consistently to around 400
+- Added spike rejection to ignore any reading that jumps more than 50 units from the previous sample, eliminated nearly all false triggers
+
+**Next Steps:**
+- Implement auto-calibration using startup seed readings
+- Test calibration consistency across multiple sessions with electrode removal and replacement
+
+---
+
+### Mar 6, 2026
+- Implemented auto-calibration seeded from 100 startup readings to set autoMin and autoMax, values track continuously during use
+- Tested by removing and reattaching electrodes between runs, calibration adapted each time without manual adjustment
+
+**Next Steps:**
+- Add variance-based intent detection
+- Add rate limiting to smooth servo movement
+
+---
+
+### Mar 7, 2026
+- Added variance-based intent detection, servo locks position when EMG variance across the 30-sample window drops below 6
+- Added hysteresis with separate engage threshold at 35% of calibrated range and release at 20%, prevents stuttering at the boundary of a flex
+
+**Next Steps:**
+- Decouple serial printing from the control loop
+
+---
+
+### Mar 8, 2026
+- Added rate limiting, max 8 degrees per loop while moving and 4 while settling, grip open and close feels controlled instead of snapping
+- Added return-to-zero so the hand fully opens when intent lock disengages
+- Decoupled serial printing from control loop, loop runs at fixed 20ms and serial prints every 500ms only
+- Added ASCII bar graphs to serial monitor for EMG, grip angle, and force so readings are readable at a glance
+
+**Next Steps:**
+- Run extended stress test to confirm full algorithm stability
+- Finalize hand model decision
